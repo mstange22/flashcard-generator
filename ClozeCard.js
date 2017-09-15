@@ -6,15 +6,14 @@ var ClozeCard = function(text, cloze) {
 	}
 
 	this.text = text;
-	console.log(this.text);
+	// console.log(this.text);
 
 	this.cloze = cloze;
-	console.log(this.cloze);
+	// console.log(this.cloze);
 	
 	if(text.includes(cloze)) {
 
 		this.partial = text.replace(cloze, "...");
-		console.log(this.partial);
 	}
 
 	else {

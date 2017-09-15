@@ -19,7 +19,7 @@ function DeckOfCards() {
 
             // add each card to the deck
             this.addCard(tempCard[0].trim(), tempCard[1].trim());
-            console.log("Card added.  Total: " + this.numCards);
+            // console.log("Card added.  Total: " + this.numCards);
         }
     }
 
