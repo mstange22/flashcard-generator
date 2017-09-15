@@ -17,6 +17,7 @@ var ClozeCard = function(text, cloze) {
 	}
 
 	else {
+		
 		console.log("Error: Text does not include cloze.");
 		this.partial = "Error";
 	}
