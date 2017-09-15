@@ -4,22 +4,26 @@ const DeckOfCards = require("./DeckOfCards");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const maxQuestions = 12;
-var randomQuestionNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 var questionCounter = 0;
 var score = 0;
+
+var randomQuestionNumbers = [];
 
 console.log("Welcome to the trivia game!");
 
 // initialize deck
 var deck = DeckOfCards();
-
-console.log(randomQuestionNumbers);
         
 fs.readFile("flashcards.txt", "utf8", function(error, data) {
     
     var incomingData = data.split("\n");
     deck.buildDeck(incomingData);
+
+    // build array for random number management
+    for(var i = 0; i < deck.numCards; i++) {
+        randomQuestionNumbers.push(i);
+    }
+
     askQuestion();
 });
 
@@ -49,22 +53,31 @@ function askQuestion() {
             console.log("Score: " + score + "/" + questionCounter);
         }
 
-        if(questionCounter < maxQuestions) {
+        if(questionCounter < deck.numCards) {
             
             inquirer.prompt([
                 {
-                    message: "Again? (y/n)",
+                    message: "Again?",
                     type: "list",
-                    choices: ["y", "n"],
+                    choices: ["yes", "no"],
                     name: "again"
                 }
             ]).then(function(answers) {
             
-                if(answers.again.toLowerCase() === "y") {
+                if(answers.again.toLowerCase() === "yes") {
 
                     askQuestion();
                 }
+
+                else {
+                    
+                    console.log("Thank you for playing. Goodbye.");
+                }
             });
+        }
+
+        else {
+            console.log("Thank you for playing.  Goodbye.");
         }
     });
 }

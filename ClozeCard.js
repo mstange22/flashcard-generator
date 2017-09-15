@@ -20,7 +20,6 @@ var ClozeCard = function(text, cloze) {
 		console.log("Error: Text does not include cloze.");
 		this.partial = "Error";
 	}
-
 }
 
 module.exports = ClozeCard;
