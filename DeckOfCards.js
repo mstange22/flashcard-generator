@@ -1,5 +1,6 @@
 const ClozeCard = require("./ClozeCard");
 const BasicCard = require("./BasicCard");
+const Capitals = require("./Capitals");
 
 function DeckOfCards(type) {
     
@@ -21,7 +22,6 @@ function DeckOfCards(type) {
 
             // add each card to the deck
             this.addCard(tempCard[0].trim(), tempCard[1].trim(), this.type);
-            // console.log("Card added.  Total: " + this.numCards);
         }
     }
 
@@ -31,8 +31,12 @@ function DeckOfCards(type) {
             var newCard = ClozeCard(text, cloze);
         }
 
-        else {
+        else if(type === "basic") {
             var newCard = BasicCard(text, cloze);
+        }
+
+        else {
+            var newCard = Capitals(text, cloze);
         }
 
         this.cards.push(newCard);

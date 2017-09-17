@@ -1,0 +1,81 @@
+Chile, Santiago
+Afghanistan, Kabul
+Somalia, Mogadishu
+Kenya, Nairobi
+France, Paris
+Russia, Moscow
+Canada, Ottawa
+United States, Washington D.C.
+China, Beijing
+Japan, Tokyo
+Phillipines, Manila
+Brazil, Brasilia
+Indonesia, Jakarta
+India, New Delhi
+Argentina, Buenos Aires
+Kazakhstan, Astana
+Ethiopia, Addis Ababa
+Italy, Rome
+Taiwan, Taipei
+Jordan, Amman
+South Africa, Pretoria
+Greece, Athens
+Cuba, Havana
+Cambodia, Phnom Penh
+South Korea, Seoul
+Romania, Bucharest
+Venezuela, Caracas
+Morocco, Rabat
+Austria, Vienna
+Mexico, Mexico City
+Saudi Arabia, Riyadh
+Germany, Berlin
+Indonesia, Jakarta
+Sudan, Khartoum
+Algeria, Algiers
+Spain, Madrid
+North Korea, Pyongyang
+Syria, Damascus
+Iran, Tehran
+United Kingdom, London
+Peru, Lima
+Thailand, Bangkok
+Mongolia, Ulaanbaatar
+Costa Rica, San Jose
+Australia, Canberra
+New Zealand, Wellington
+Honduras, Tegucigalpa
+Czech Republic, Prague
+Dominican Republic, Santo Domingo
+Bulgaria, Sofia
+Belgium, Brussels
+Armenia, Yerevan
+Sierra Leone, Freetown
+Ireland, Dublin
+Georgia, Tbilisi
+Senegal, Dakar
+Nepal, Kathmandu
+Guatemala, Guatemala City
+Haiti, Port-au-Prince
+Libya, Tripoli
+Uruguay, Montevideo
+Poland, Warsaw
+Belarus, Minsk
+Uganda, Kampala
+Ghana, Accra
+Lebanon, Beirut
+Sweden, Stockholm
+Ecuador, Quito
+Qatar, Doha
+Yemen, Sana'a
+Malaysia, Kuala Lumpur
+Colombia, Bogota
+Viet Nam, Hanoi
+Bolivia, La Paz
+Hungary, Budapest
+Egypt, Cairo
+Pakistan, Islamabad
+Nicaragua, Managua
+Turkey, Ankara
+Norway, Oslo
+Finland, Helsinki

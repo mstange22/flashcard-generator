@@ -6,10 +6,7 @@ var ClozeCard = function(text, cloze) {
 	}
 
 	this.text = text;
-	// console.log(this.text);
-
 	this.cloze = cloze;
-	// console.log(this.cloze);
 	
 	if(text.includes(cloze)) {
 

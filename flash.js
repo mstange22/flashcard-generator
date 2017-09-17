@@ -11,16 +11,16 @@ console.log("Welcome to the trivia game!");
 
 inquirer.prompt([
     {
-        message: "Would you like to use basic or cloze cards?",
+        message: "Choose from basic or cloze trivia cards or try world capitals?",
         type: "list",
-        choices: ["basic", "cloze"],
+        choices: ["basic", "cloze", "capitals"],
         name: "cardType"
-    }            
+    }     
 ]).then(function(answers){
 
-    if(answers.cardType === "cloze") {
+    deck = DeckOfCards(answers.cardType);
 
-        deck = DeckOfCards(answers.cardType);
+    if(answers.cardType === "cloze") {
              
         fs.readFile("cloze-cards.txt", "utf8", function(error, data) {
             
@@ -36,8 +36,7 @@ inquirer.prompt([
         });
     }
 
-    else {
-        deck = DeckOfCards(answers.cardType);
+    else if (answers.cardType === "basic") {
              
         fs.readFile("basic-cards.txt", "utf8", function(error, data) {
             
@@ -51,6 +50,22 @@ inquirer.prompt([
 
             askQuestion();
         });
+    }
+
+    else {
+
+        fs.readFile("world-capitals.txt", "utf8", function(error, data) {
+            
+            var incomingData = data.split("\n");
+            deck.buildDeck(incomingData);
+
+            // build array for random number management
+            for(var i = 0; i < deck.numCards; i++) {
+                randomQuestionNumbers.push(i);
+            }
+
+            askQuestion();
+        });        
     }
 
 });
@@ -96,7 +111,7 @@ function askQuestion() {
     }
 
     // basic questions
-    else {
+    else if(deck.type === "basic") {
         
         inquirer.prompt([
             {
@@ -114,6 +129,40 @@ function askQuestion() {
             else {
                 console.log("Incorrect.");
                 console.log("The answer is " + deck.cards[cardIndex].back);
+                console.log("Score: " + score + "/" + questionCounter);
+            }
+    
+            if(questionCounter < deck.numCards) {
+                
+                playAgainPrompt();
+            }
+    
+            else {
+                console.log("Thank you for playing.  Goodbye.");
+            }
+        });
+    }
+    
+    // world capitals
+    else {
+        
+        inquirer.prompt([
+            {
+                message: "What is the capital of " + deck.cards[cardIndex].country + "?",
+                name: "country"
+            }            
+        ]).then(function(answers) {
+    
+            if(answers.country.toUpperCase() === deck.cards[cardIndex].capital.toUpperCase()) {
+                console.log("Correct!");
+                score++;
+                console.log("Score: " + score + "/" + questionCounter);
+            }
+    
+            else {
+                console.log("Incorrect.");
+                console.log("The capital of " + deck.cards[cardIndex].country + " is " +
+                                                                 deck.cards[cardIndex].capital);
                 console.log("Score: " + score + "/" + questionCounter);
             }
     
