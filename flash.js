@@ -6,6 +6,7 @@ var questionCounter = 0;
 var score = 0;
 var deck;
 var randomQuestionNumbers = [];
+var incorrectCapitals = [];
 
 console.log("Welcome to the trivia game!");
 
@@ -13,7 +14,7 @@ inquirer.prompt([
     {
         message: "Choose from basic or cloze trivia cards or try world capitals?",
         type: "list",
-        choices: ["basic", "cloze", "capitals"],
+        choices: ["basic", "cloze", "world capitals"],
         name: "cardType"
     }     
 ]).then(function(answers){
@@ -105,6 +106,7 @@ function askQuestion() {
             }
     
             else {
+
                 console.log("Thank you for playing.  Goodbye.");
             }
         });
@@ -164,6 +166,7 @@ function askQuestion() {
                 console.log("The capital of " + deck.cards[cardIndex].country + " is " +
                                                                  deck.cards[cardIndex].capital);
                 console.log("Score: " + score + "/" + questionCounter);
+                incorrectCapitals.push(deck.cards[cardIndex]);
             }
     
             if(questionCounter < deck.numCards) {
@@ -172,6 +175,16 @@ function askQuestion() {
             }
     
             else {
+
+                if(incorrectCapitals.length > 0) {
+                    
+                    console.log("You got the following capitals wrong:")
+                    for(var i = 0; i < incorrectCapitals.length; i++) {
+
+                        console.log(incorrectCapitals[i].country + ": " + incorrectCapitals[i].capital);
+                    }
+                }
+
                 console.log("Thank you for playing.  Goodbye.");
             }
         });
@@ -195,7 +208,16 @@ function playAgainPrompt() {
         }
 
         else {
-            
+
+            if(incorrectCapitals.length > 0) {
+                
+                console.log("You got the following questions wrong:")
+                for(var i = 0; i < incorrectCapitals.length; i++) {
+
+                    console.log(incorrectCapitals[i].country + ": " + incorrectCapitals[i].capital);
+                }
+            }
+
             console.log("Thank you for playing. Goodbye.");
         }
     });
