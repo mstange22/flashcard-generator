@@ -1,7 +1,6 @@
 const DeckOfCards = require("./DeckOfCards");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const colors = require("colors");
 
 var questionCounter = 0;
 var score = 0;
