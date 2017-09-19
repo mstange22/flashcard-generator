@@ -2,7 +2,10 @@
 Homework #9
 This is a command line application that prompts the user for input.
 
-Execute node flash.js to start.  Choose from either basic or cloze flash cards - or the bonus world capitals (basic cards).
+```console
+node flash.js
+```
+Choose from either basic or cloze flash cards - or the bonus world capitals (basic cards).
 
 Program implements a constructor for a DeckOfCards and then builds the deck with one of the three options.
 
