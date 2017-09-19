@@ -2,6 +2,9 @@
 Homework #9
 This is a command line application that prompts the user for input.
 
+## Execution
+
+From the command line:
 ```console
 node flash.js
 ```
