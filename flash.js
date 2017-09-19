@@ -1,6 +1,7 @@
 const DeckOfCards = require("./DeckOfCards");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const colors = require("colors");
 
 var questionCounter = 0;
 var score = 0;
@@ -96,7 +97,8 @@ function askQuestion() {
     
             else {
                 console.log("Incorrect.");
-                console.log(deck.cards[cardIndex].text)
+                console.log(deck.cards[cardIndex].partial.replace("...", "'" +
+                                    deck.cards[cardIndex].cloze + "'"));
                 console.log("Score: " + score + "/" + questionCounter);
             }
     
