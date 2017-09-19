@@ -13,7 +13,7 @@ console.log("Welcome to the trivia game!");
 
 inquirer.prompt([
     {
-        message: "Choose from basic or cloze trivia cards or try world capitals?",
+        message: "Choose from basic or cloze trivia cards or try world capitals",
         type: "list",
         choices: ["basic", "cloze", "world capitals"],
         name: "cardType"
