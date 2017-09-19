@@ -6,7 +6,15 @@ This is a command line application that prompts the user for input.
 
 Be sure to include the following files:
 ```console
-flash.js DeckOfCards.js ClozeCard.js BasicCard.js Capitals.js cloze-cards.txt basic-cards.txt world-capitals.txt package.json
+flash.js
+DeckOfCards.js
+ClozeCard.js
+BasicCard.js
+Capitals.js
+cloze-cards.txt
+basic-cards.txt
+world-capitals.txt
+package.json
 ```
 
 ## Execution
